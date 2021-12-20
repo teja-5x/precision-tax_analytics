@@ -12,4 +12,4 @@ where
     and YEAR(CT.InsertedDate)  = YEAR(CURRENT_TIMESTAMP)
     and MONTH(CT.InsertedDate) = MONTH(CURRENT_TIMESTAMP)
 group by E.ID, E.FirstName
-order by 3 desc;
+order by 3 desc
