@@ -21,12 +21,14 @@ temp_table2 as (
         sum(case when rating is null or rating = 0 then 1 else 0 end) as rU
     from temp_table
     group by ContactID
-),
+)
+--select * from temp_table2;
+,
 temp_table3 as (
     select 
         ContactID, 
         sum(Amount) as Total_Amount 
-    from Payments 
+    from Fivetran_db.SQL_Server_DBO.Payments 
     where Paid = 1 
     group by ContactID
 )
