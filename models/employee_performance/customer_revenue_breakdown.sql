@@ -43,7 +43,8 @@ select
     T2.r5, 
     T2.r6, 
     T2.rU,
-    ((T2.r1+T2.r2)*300 +  T2.r3*400 + T2.r4 * 500 + T2.r5 *650 + T2.r6 *750 + T2.ru * 400) as TaxResolution
+    ((T2.r1+T2.r2)*300 +  T2.r3*400 + T2.r4 * 500 + T2.r5 *650 + T2.r6 *750 + T2.ru * 400) as TaxResolution,
+    ( T3.Total_Amount - ((T2.r1+T2.r2)*300 +  T2.r3*400 + T2.r4 * 500 + T2.r5 *650 + T2.r6 *750 + T2.ru * 400) ) as Tax_Prep_Revenue
 from temp_table2 T2 JOIN 
 temp_table3 T3 
 ON T2.ContactID = T3.ContactID
