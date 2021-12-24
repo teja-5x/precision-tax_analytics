@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with BillingContracts as 
+with AllBillingContracts as 
 (
     select 
         *
@@ -9,4 +9,4 @@ with BillingContracts as
     --where TPO = 0 
     --and billingEndDate >= CONCAT(year(current_timestamp),'-','01','-','01')
 )
-select * from BillingContracts
+select * from AllBillingContracts
