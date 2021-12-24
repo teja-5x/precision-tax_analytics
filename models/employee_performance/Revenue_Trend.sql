@@ -5,7 +5,7 @@ select
     Year(billingEndDate) as YEAR,
     SUM (CASE WHEN tpo = 1 THEN Total ELSE 0 END ) as Tax_Prep_Revenue,
     SUM (CASE WHEN tpo = 0 THEN Total ELSE 0 END ) as Tax_Resolution_Revenue
-from  {{ ref('AllBillingContracts') }}
+from  {{ ref('BillingContracts') }}
     where 
         MONTH(billingEndDate) IS NOT NULL and 
         Year(billingEndDate) IS NOT NULL
