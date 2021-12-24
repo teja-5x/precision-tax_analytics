@@ -1,5 +1,5 @@
 {{ config(materialized='view') }}
 
 select *
-from {{ ref('TotalEmployees') }}
+from {{ ref('AllEmployees') }}
 where INACTIVE = FALSE
