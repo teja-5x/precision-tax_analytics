@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with TotalEmployees as (
+with AllEmployees as (
     select 
         *
     from 
@@ -8,4 +8,4 @@ with TotalEmployees as (
     --where INACTIVE = FALSE
     order by ID
 )
-select * from TotalEmployees
+select * from AllEmployees
